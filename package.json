@@ -1,0 +1,30 @@
+{
+  "name": "git-auto-rebase-cli",
+  "version": "1.1.1",
+  "description": "A CLI tool that provides git automation commands including auto-rebase and amend-push functionality",
+  "main": "index.js",
+  "bin": {
+    "git-auto-rebase": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "git",
+    "rebase",
+    "amend",
+    "push",
+    "cli",
+    "automation",
+    "development"
+  ],
+  "author": "john",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "files": [
+    "index.js",
+    "README.md"
+  ]
+}
