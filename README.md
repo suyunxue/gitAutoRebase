@@ -31,6 +31,18 @@ git-auto-rebase amend-push
 git-commit-auto-rebase "your commit message"
 ```
 
+### Auto Commit and Push
+```bash
+# First, stage your changes
+git add .
+
+# Auto generate commit message and push
+git-auto-commit-push
+
+# Or use custom commit message
+git-auto-commit-push "your commit message"
+```
+
 ### Help
 ```bash
 git-auto-rebase --help
@@ -68,6 +80,16 @@ git-auto-rebase -h
 8. Switches back to your original branch
 9. Rebases your branch onto main
 10. Pushes changes with `--force-with-lease`
+
+### Auto Commit and Push Command (`git-auto-commit-push`)
+1. Checks if you're in a git repository
+2. Gets current branch name
+3. Checks if there are staged changes
+4. Auto-generates commit message based on staged files (or uses provided message)
+5. Commits changes (`git commit -m "message"`)
+6. Pushes changes to remote (`git push`)
+
+Note: You need to manually run `git add` before using this command.
 
 ### Help Command (`--help`)
 Displays usage information including:
@@ -129,6 +151,17 @@ Pushing changes with force-with-lease...
 Git auto rebase completed successfully!
 ```
 
+### Auto Commit and Push
+```
+Starting auto commit and push...
+Current branch: feature-branch
+Generating commit message...
+Generated message: "update src/index.js, src/utils.js"
+Committing changes...
+Pushing to remote...
+Auto commit and push completed successfully!
+```
+
 ### Help Output
 ```
 git-auto-rebase-cli v1.2.0
@@ -147,6 +180,8 @@ Examples:
   git-auto-rebase rebase                   # Run auto rebase explicitly
   git-auto-rebase amend                    # Amend last commit and push
   git-commit-auto-rebase "commit message"  # Commit, push and auto rebase
+  git-auto-commit-push                     # Auto generate commit message and push
+  git-auto-commit-push "custom message"    # Commit with custom message and push
   git-auto-rebase --help                   # Show this help
 ```
 

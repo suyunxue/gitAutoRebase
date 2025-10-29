@@ -1,11 +1,12 @@
 {
   "name": "git-auto-rebase-cli",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "A CLI tool that provides git automation commands including auto-rebase and amend-push functionality",
   "main": "index.js",
   "bin": {
     "git-auto-rebase": "./index.js",
-    "git-commit-auto-rebase": "./commit-auto-rebase.js"
+    "git-commit-auto-rebase": "./commit-auto-rebase.js",
+    "git-auto-commit-push": "./auto-commit-push.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,6 +16,7 @@
     "rebase",
     "amend",
     "push",
+    "commit",
     "cli",
     "automation",
     "development"
@@ -27,6 +29,7 @@
   "files": [
     "index.js",
     "commit-auto-rebase.js",
+    "auto-commit-push.js",
     "README.md"
   ]
 }
