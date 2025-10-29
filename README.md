@@ -26,6 +26,11 @@ git-auto-rebase amend
 git-auto-rebase amend-push
 ```
 
+### Commit and Auto Rebase
+```bash
+git-commit-auto-rebase "your commit message"
+```
+
 ### Help
 ```bash
 git-auto-rebase --help
@@ -51,6 +56,18 @@ git-auto-rebase -h
 3. Prevents execution on main branch for safety
 4. Amends the last commit without editing the message (`git commit --amend --no-edit`)
 5. Pushes changes with `--force-with-lease`
+
+### Commit and Auto Rebase Command (`git-commit-auto-rebase`)
+1. Checks if you're in a git repository
+2. Gets current branch name
+3. Prevents execution on main branch for safety
+4. Commits changes with provided message (`git commit -m "message"`)
+5. Pushes changes to remote (`git push`)
+6. Switches to main branch
+7. Pulls latest changes from origin/main
+8. Switches back to your original branch
+9. Rebases your branch onto main
+10. Pushes changes with `--force-with-lease`
 
 ### Help Command (`--help`)
 Displays usage information including:
@@ -96,9 +113,25 @@ Pushing changes with force-with-lease...
 Git amend and push completed successfully!
 ```
 
+### Commit and Auto Rebase
+```
+Starting git commit auto rebase...
+Current branch: feature-branch
+Committing changes with message: "feat: add new feature"
+Pushing changes...
+Starting git auto rebase...
+Current branch: feature-branch
+Switching to main branch...
+Pulling latest changes from main...
+Switching back to feature-branch branch...
+Rebasing feature-branch onto main...
+Pushing changes with force-with-lease...
+Git auto rebase completed successfully!
+```
+
 ### Help Output
 ```
-git-auto-rebase-cli v1.1.1
+git-auto-rebase-cli v1.2.0
 
 Usage:
   git-auto-rebase [command]
@@ -110,10 +143,11 @@ Commands:
   --help, -h    Show this help message
 
 Examples:
-  git-auto-rebase           # Run auto rebase (default)
-  git-auto-rebase rebase    # Run auto rebase explicitly
-  git-auto-rebase amend     # Amend last commit and push
-  git-auto-rebase --help    # Show this help
+  git-auto-rebase                          # Run auto rebase (default)
+  git-auto-rebase rebase                   # Run auto rebase explicitly
+  git-auto-rebase amend                    # Amend last commit and push
+  git-commit-auto-rebase "commit message"  # Commit, push and auto rebase
+  git-auto-rebase --help                   # Show this help
 ```
 
 ## License
